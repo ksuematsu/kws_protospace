@@ -46,3 +46,4 @@ end
 gem 'pry-rails'
 gem 'kaminari'
 gem 'devise'
+gem 'knockknock'
