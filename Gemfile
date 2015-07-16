@@ -46,4 +46,5 @@ end
 gem 'pry-rails'
 gem 'kaminari'
 gem 'devise'
-
+gem 'haml-rails'
+gem 'slim-rails'
