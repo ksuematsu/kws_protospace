@@ -9,7 +9,7 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'mysql2'
 gem 'rails', '4.2.1'
-gem 'rmagick'
+gem 'rmagick', require: 'RMagick'
 gem 'sass-rails', '~> 5.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'slim-rails'
