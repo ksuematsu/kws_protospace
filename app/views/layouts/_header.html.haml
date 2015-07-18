@@ -21,7 +21,7 @@
             %span.caret
           %ul.dropdown-menu{role: "menu"}
             %li
-              %a{href: "/users/1/edit"} Profile Edit
+              = link_to "Profile Edit", edit_user_path(current_user.id)
             %li
               = link_to "Logout", destroy_user_session_path, method: "delete"
         %li
