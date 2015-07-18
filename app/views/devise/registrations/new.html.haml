@@ -5,28 +5,26 @@
         %h2 Register
         = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
           = devise_error_messages!
-          / .field
-          /   = f.label :nickname
-          /   %em (6 characters maximum)
-          /   %br/
-          /   = f.text_field :nickname, autofocus: true, maxlength: "6"
-
-          / .field.user-name_image.row
+          .user-name_image.row
+            .user-name.col-md-10
+              = f.text_field :user_name, autofocus: true, maxlength: "6", placeholder: "Username"
 
           .field.user-email
-            = f.label :email
-            %br/
-            = f.email_field :email
+            = f.email_field :email, placeholder: "E-Mail Address"
           .field.user-password
-            = f.label :password
-            - if @validatable
-              %em
-                (#{@minimum_password_length} characters minimum)
-            %br/
-            = f.password_field :password, autocomplete: "off"
-          .field.user-password
-            = f.label :password_confirmation
-            %br/
-            = f.password_field :password_confirmation, autocomplete: "off"
-          .actions
-            = f.submit "Sign up"
+            = f.password_field :password, autocomplete: "off", placeholder: "Password"
+          %h4 Member of
+          .user-user-member.row
+            .user-name.col-md-12
+              = f.text_field :member_of
+          %h4 Profile
+          .user-user-profile.row
+            .user-name.col-md-12
+              = f.text_area :profile, cols: "30", rows: "4"
+          %h4 Works 
+          .user-name_image.row
+            .user-name.col-md-12
+              = f.text_area :works, cols: "30", rows: "4"
+
+          %button.actions.btn.btn-lg.btn-primary.btn-block
+            Save
