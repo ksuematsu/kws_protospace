@@ -3,28 +3,27 @@
     %header.row.user-nav.row
       .col-md-12
         %h2 Edit Profile
-        = form_for current_user do |f|
+        = form_for(current_user) do |f|
           .user-name_image.row
             .user-name.col-md-10
-              = f.text_field :user_name, value: current_user.user_name
+              = f.text_field :user_name
             .user-image.col-md-2{style: "background-image: url(#{current_user.avatar})"}
               %button.btn.btn-primary Change image
               %input{type: "file"}/
-          = f.text_field :email, value: current_user.email
-          = f.text_field :password, placeholder: "Password"
+          = f.text_field :email
           .col-md-12
             %h4 Member of
             .user-user-member.row
               .user-name.col-md-12
-                = f.text_field :member_of, value: current_user.member_of
+                = f.text_field :member_of
             %h4 Profile
             .user-user-profile.row
               .user-name.col-md-12
-                = f.text_area :profile, cols: "30", rows: "4", value: current_user.profile
+                = f.text_area :profile, cols: "30", rows: "4"
             %h4 Works 
             .user-name_image.row
               .user-name.col-md-12
-                = f.text_area :works, cols: "30", rows: "4", value: current_user.works
+                = f.text_area :works, cols: "30", rows: "4"
             .actions.btn.btn-lg.btn-primary.btn-block
               = f.submit "Save"
-        
+      
