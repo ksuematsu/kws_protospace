@@ -1,5 +1,3 @@
 class Prototype < ActiveRecord::Base
-  validates :title, presence: true
-  validates :catch_copy, presence: true
-  validates :concept, presence: true
+  validates :title, :catch_copy, :concept, presence: true
 end
