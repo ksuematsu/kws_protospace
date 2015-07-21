@@ -5,7 +5,12 @@ class PrototypesController < ApplicationController
     @prototype = Prototype.new
   end
   def create
-    @prototype = Prototype.create(prototype_params)
+    @prototype = Prototype.new(prototype_params)
+    if @prototype.save
+      redirect_to prototypes_url, notice: "Complete!"
+    else
+      redirect_to new_prototype_url, notice: "you need to fill requisite datas"
+    end
   end
 
   private
