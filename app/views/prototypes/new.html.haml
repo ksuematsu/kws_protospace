@@ -1,0 +1,45 @@
+.container.proto-new
+  .col-md-8.col-md-offset-2
+    %header.row.user-nav.row
+    = form_for(@prototype) do |f|
+      .col-md-12
+        = if flash[:notice]
+          .alert.alert-danger
+            = flash[:notice]
+        = f.text_field :title, autofocus: true, placeholder: "Title"
+      .row
+        .col-md-12
+          .cover-image-upload
+            %input{type: "file"}/
+        .col-md-12
+          %ul.proto-sub-list.list-group
+            %li.list-group-item.col-md-4
+              .image-upload
+                %input{type: "file"}/
+            %li.list-group-item.col-md-4
+              .image-upload
+                %input{type: "file"}/
+            %li.list-group-item.col-md-4
+              .image-upload-plus
+                %span +
+      .row.proto-description
+        .col-md-12
+          = f.text_field :catch_copy, placeholder: "Catch copy"
+        .col-md-12
+          = f.text_area :concept, cols: "30", rows: "4", placeholder: "Concept"
+      .row.text-center.proto-btn
+        %button.actions.btn.btn-lg.btn-primary.btn-block
+          Publish
+        / commented out just for now
+        / 今だけコメントアウト
+        / .col-md-12
+        /   %h4 Tag List
+        /   .row
+        /     .col-md-3
+        /       = f.text_field :web_design, placeholder: "Web Design"
+        /     .col-md-3
+        /       = f.text_field :UI, placeholder: "UI"
+        /     .col-md-3
+        /       = f.text_field :application, placeholder: "Application"
+      
+
