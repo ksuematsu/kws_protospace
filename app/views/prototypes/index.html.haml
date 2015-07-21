@@ -1,5 +1,8 @@
 .container.proto-page
   %header.row.user-nav
+    = if flash[:notice]
+      .alert.alert-success
+        = flash[:notice]
     .col-md-6
       .media
         .media-left
