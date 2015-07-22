@@ -8,20 +8,21 @@
             = flash[:notice]
         = f.text_field :title, autofocus: true, placeholder: "Title"
       .row
-        .col-md-12
-          .cover-image-upload
-            %input{type: "file"}/
-        .col-md-12
-          %ul.proto-sub-list.list-group
-            %li.list-group-item.col-md-4
-              .image-upload
-                %input{type: "file"}/
-            %li.list-group-item.col-md-4
-              .image-upload
-                %input{type: "file"}/
-            %li.list-group-item.col-md-4
-              .image-upload-plus
-                %span +
+        = f.fields_for :image, @prototype.image || Image.new do |i|
+          .col-md-12
+            .cover-image-upload
+              = i.file_field :main_image
+          .col-md-12
+            %ul.proto-sub-list.list-group
+              %li.list-group-item.col-md-4
+                .image-upload
+                  = i.file_field :sub_image_1
+              %li.list-group-item.col-md-4
+                .image-upload
+                  = i.file_field :sub_image_2
+              %li.list-group-item.col-md-4
+                .image-upload-plus
+                  %span +
       .row.proto-description
         .col-md-12
           = f.text_field :catch_copy, placeholder: "Catch copy"
@@ -42,4 +43,3 @@
         /     .col-md-3
         /       = f.text_field :application, placeholder: "Application"
       
-
