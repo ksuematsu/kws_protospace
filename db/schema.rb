@@ -11,15 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150721145746) do
+ActiveRecord::Schema.define(version: 20150722033830) do
 
   create_table "images", force: :cascade do |t|
-    t.string   "main_image",  limit: 255, null: false
-    t.string   "sub_image_1", limit: 255
-    t.string   "sub_image_2", limit: 255
-    t.string   "sub_image_3", limit: 255
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.integer  "prototype_id", limit: 4
+    t.string   "main_image",   limit: 255, null: false
+    t.string   "sub_image_1",  limit: 255
+    t.string   "sub_image_2",  limit: 255
+    t.string   "sub_image_3",  limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "prototypes", force: :cascade do |t|
