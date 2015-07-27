@@ -29,18 +29,16 @@
           = f.text_field :catch_copy, placeholder: "Catch copy"
         .col-md-12
           = f.text_area :concept, cols: "30", rows: "4", placeholder: "Concept"
+          .col-md-12
+          %h4 Tag List
+      .row
+        .col-md-3
+          = f.text_field :web_design, placeholder: "Web Design"
+        .col-md-3
+          = f.text_field :ui, placeholder: "UI"
+        .col-md-3
+          = f.text_field :application, placeholder: "Application"
       .row.text-center.proto-btn
         %button.actions.btn.btn-lg.btn-primary.btn-block
           Publish
-        / commented out just for now
-        / 今だけコメントアウト
-        / .col-md-12
-        /   %h4 Tag List
-        /   .row
-        /     .col-md-3
-        /       = f.text_field :web_design, placeholder: "Web Design"
-        /     .col-md-3
-        /       = f.text_field :UI, placeholder: "UI"
-        /     .col-md-3
-        /       = f.text_field :application, placeholder: "Application"
-      
+
