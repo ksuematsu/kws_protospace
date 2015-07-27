@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'acts-as-taggable-on'
 gem 'carrierwave'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
