@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
+    @prototypes = current_user.prototypes.order("created_at DESC").page(params[:page]).per(4)
   end
 
   def edit
