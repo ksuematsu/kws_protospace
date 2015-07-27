@@ -6,6 +6,10 @@ Rails.application.routes.draw do
 
   resources :users, only: [:index, :edit, :update]
 
-  resources :prototypes, only: [:new, :create, :show]
+  resources :prototypes, only: [:new, :create]
+
+  resources :prototypes, only: [:show] do
+    resources :comments, only: [:create]
+  end
 
 end
