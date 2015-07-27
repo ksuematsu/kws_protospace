@@ -14,7 +14,6 @@
           .proto-user
             %a{href: ""} by User
             %span.degree we-b inc. Designer
-              
     .col-md-6.text-right
       %button.btn.btn-default
         = image_tag("icon_heart.svg")
@@ -42,14 +41,14 @@
     .col-md-3
       %h4 Tag List
       %ul.proto-tag-list.list-inline
-        %li 
+        %li
           %a{href: "#", class: "btn btn-default"} iPad
-        %li 
+        %li
           %a{href: "#", class: "btn btn-default"} wireframe
   .row.proto-comments
     %h4.col-md-12
       Comments
-      %span.num (10) 
+      %span.num (10)
     .col-md-8
       .media
         .media-left
@@ -62,7 +61,7 @@
               %span.anchorjs-icon
           %p Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
           %p Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      / = render 'comments/form'
+      = render 'comments/form'
       / 以下を参考にコメントモデルなどつくってフォーム作成
       / %form.form-inline{role: "form"}
       /   %h4 Write a comment
