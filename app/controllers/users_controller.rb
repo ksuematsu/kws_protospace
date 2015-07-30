@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   def show
-    @prototypes = current_user.prototypes.order("created_at DESC").page(params[:page]).per(4)
+    @user = User.find(params[:id])
+    @prototypes = @user.prototypes
+                       .order(created_at: :DESC)
+                       .page(params[:page]).per(4)
   end
 
   def edit
@@ -12,6 +15,11 @@ class UsersController < ApplicationController
 
   private
   def update_params
-    params.require(:user).permit(:user_name, :avatar, :email, :member_of, :profile, :works)
+    params.require(:user).permit(:user_name,
+                                 :avatar,
+                                 :email,
+                                 :member_of,
+                                 :profile,
+                                 :works)
   end
 end
