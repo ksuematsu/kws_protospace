@@ -8,7 +8,7 @@ class PrototypesController < ApplicationController
     @prototype = Prototype.new
   end
   def create
-    @prototype = Prototype.new(prototype_params)
+    @prototype = current_user.prototypes.new(prototype_params)
     if @prototype.save
       redirect_to root_url, notice: "Complete!"
     else
@@ -18,6 +18,7 @@ class PrototypesController < ApplicationController
 
   private
   def prototype_params
+    tag_list = params[:prototype][:tag_list].join(",")
     params.require(:prototype).permit(:title,
                                       :catch_copy,
                                       :concept,
@@ -25,6 +26,6 @@ class PrototypesController < ApplicationController
                                         :sub_image_1,
                                         :sub_image_2,
                                         :sub_image_3])
-                              .merge(user_id: current_user.id)
+                              .merge(tag_list: tag_list)
   end
 end
