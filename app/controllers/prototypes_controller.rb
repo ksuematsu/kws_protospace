@@ -1,8 +1,8 @@
 class PrototypesController < ApplicationController
   def show
     @prototype = Prototype.find(params[:id])
-    @comment = Comment.new
-    @comments = @prototype.comments
+    @comment   = Comment.new
+    @comments  = @prototype.comments
   end
   def new
     @prototype = Prototype.new
