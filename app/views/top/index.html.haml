@@ -10,16 +10,18 @@
     .row
       %ul.nav.nav-pills.col-lg-11
         %li.active{ role: "presentation" }
-          %a{ href: "#" } Popular PROTO
+          %a{ class: 'show_popular' } PROTOTYPES
         %li{ role: "presentation" }
-          %a{ href: "#" } Newest PROTO
+          %a{ class: 'show_newest' } 4 HOTTEST PROTO
       %button{ type: "button", class: "btn btn-default col-lg-1" } View Tags
 
 .container.proto-list
-  .row
+  .row#prototypes
     = render partial: 'prototype', collection: @prototypes
+  .row#newest-prototypes{ style: "display: none" }
+    = render partial: 'prototype', collection: @newest_prototypes
 .text-center
   %ul.pagination
-    %li.disabled
+    %li.disabled#prototypes
       = paginate(@prototypes)
 
