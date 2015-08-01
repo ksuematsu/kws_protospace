@@ -3,6 +3,7 @@ class PrototypesController < ApplicationController
     @prototype = Prototype.find(params[:id])
     @comment   = Comment.new
     @comments  = @prototype.comments
+    @tags      = @prototype.tag_list
   end
   def new
     @prototype = Prototype.new

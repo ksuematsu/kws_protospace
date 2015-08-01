@@ -41,12 +41,7 @@
     .col-md-3
       %h4 Tag List
       %ul.proto-tag-list.list-inline
-        %li
-          %a{ href: "#", class: "btn btn-default" } #{@prototype.tag_list[0]}
-        %li
-          %a{ href: "#", class: "btn btn-default" } #{@prototype.tag_list[1]}
-        %li
-          %a{ href: "#", class: "btn btn-default" } #{@prototype.tag_list[2]}
+        = render partial: 'tag', collection: @tags
   .row.proto-comments
     %h4.col-md-12
       Comments
