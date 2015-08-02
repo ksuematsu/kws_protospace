@@ -1,0 +1,14 @@
+.col-sm-4.col-md-3.proto-content
+  .thumbnail
+    %a{ href: "/prototypes/#{ prototype.id }" }
+      = image_tag("#{ main_image(prototype) }")
+      .caption
+        %h3 #{ prototype.title }
+        .proto-meta
+          .proto-date
+            = date_of_created(prototype)
+        %ul.proto-tag-list.list-inline
+          - prototype.tag_list.each do |tag|
+            %li
+              %a{ href: "#", class: "btn btn-default" } #{ tag }
+

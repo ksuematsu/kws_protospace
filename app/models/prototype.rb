@@ -1,4 +1,6 @@
 class Prototype < ActiveRecord::Base
+  acts_as_taggable
+
   has_one :image
   accepts_nested_attributes_for :image
 
