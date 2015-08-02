@@ -1,11 +1,13 @@
 $(document).ready(function(){
+    var prototypes = $(".row#prototypes, .disabled#prototypes");
+    var newest = $(".row#newest-prototypes");
     $(".show_newest").click(function(){
-        $(".row#prototypes, .disabled#prototypes").hide();
-        $(".row#newest-prototypes").show();
+        prototypes.hide();
+        newest.show();
     });
     $(".show_popular").click(function(){
-        $(".row#prototypes, .disabled#prototypes").show();
-        $(".row#newest-prototypes").hide();
+        prototypes.show();
+        newest.hide();
     });
 });
 
