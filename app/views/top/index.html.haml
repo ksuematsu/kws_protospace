@@ -9,37 +9,19 @@
         = flash[:notice]
     .row
       %ul.nav.nav-pills.col-lg-11
-        %li.active{role: "presentation"}
-          %a{href: "#"} Popular PROTO
-        %li{role: "presentation"}
-          %a{href: "#"} Newest PROTO
-      %button{type: "button", class: "btn btn-default col-lg-1"} View Tags
+        %li.active{ role: "presentation" }
+          %a{ class: 'show_popular' } PROTOTYPES
+        %li{ role: "presentation" }
+          %a{ class: 'show_newest' } 4 HOTTEST PROTO
+      %button{ type: "button", class: "btn btn-default col-lg-1" } View Tags
 
 .container.proto-list
-  .row
-    - @prototypes.each do |prototype|
-      .col-sm-4.col-md-3.proto-content
-        .thumbnail
-          %a{href: "/prototypes/#{prototype.id}"}
-            = image_tag "#{prototype.image.main_image.url.to_s}"
-            .caption
-              %h3
-                = prototype.title
-              .proto-meta
-                .proto-user
-                  %a{href:""}
-                    by ヤマダ
-                .proto-posted
-                  = "#{prototype.created_at.month}, #{prototype.created_at.day}"
-              %ul.proto-tag-list.list-inline
-                %li
-                  %a{href: "#", class: "btn btn-default"}
-                    = prototype.web_design
-                %li
-                  %a{href: "#", class: "btn btn-default"}
-                    = prototype.ui
-
+  .row#prototypes
+    = render partial: 'prototype', collection: @prototypes
+  .row#newest-prototypes{ style: "display: none" }
+    = render partial: 'prototype', collection: @newest_prototypes
 .text-center
   %ul.pagination
-    %li.disabled
+    %li.disabled#prototypes
       = paginate(@prototypes)
+

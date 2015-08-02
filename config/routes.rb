@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'top#index'
 
-  resources :users, only: [:index, :edit, :update]
+  resources :users, only: [:show, :edit, :update]
 
   resources :prototypes, only: [:new, :create]
 
