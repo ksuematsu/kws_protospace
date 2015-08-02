@@ -26,11 +26,11 @@
       %ul.proto-sub-list.list-group
         %li.list-group-item
           / クソださいのでどうにかしたい
-          = image_tag("#{ @prototype.image.sub_image_1 }", class: 'img-responsive')
+          = image_tag("#{ sub_image(1) }", class: 'img-responsive')
         %li.list-group-item
-          = image_tag("#{ @prototype.image.sub_image_2 }", class: 'img-responsive')
+          = image_tag("#{ sub_image(2) }", class: 'img-responsive')
         %li.list-group-item
-          = image_tag("#{ @prototype.image.sub_image_3 }", class: 'img-responsive')
+          = image_tag("#{ sub_image(3) }", class: 'img-responsive')
   .row.proto-description
     .col-md-3
       %h4 Catch Copy
