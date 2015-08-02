@@ -12,5 +12,26 @@ module PrototypesHelper
       @prototype.image.sub_image_3
     end
   end
+
+  def creater_path
+    "/users/#{ @prototype.user_id }"
+  end
+
+  def affiliation
+    @prototype.user.member_of
+  end
+
+  def creater_avatar
+    "#{ @prototype.user.avatar }"
+  end
+
+  # 部分テンプレートのヘルパーがまだ理解不足
+  # def commenter_avatar
+  #   "#{ comment.user.avatar }"
+  # end
+
+  # def commenter
+  #   comment.user.user_name
+  # end
 end
 

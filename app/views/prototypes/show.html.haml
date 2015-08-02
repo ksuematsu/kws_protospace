@@ -7,13 +7,13 @@
       .media
         .media-left
           %a{ href: "#" }
-            %img.media-object{ alt: "64x64", "data-holder-rendered" => "true", "data-src" => "holder.js/64x64", src: "#{ @prototype.user.avatar }", style: "width: 64px; height: 64px;" }/
+            %img.media-object{ alt: "64x64", "data-holder-rendered" => "true", "data-src" => "holder.js/64x64", src: creater_avatar, style: "width: 64px; height: 64px;" }/
         .media-body
           %h4#top-aligned-media.media-heading
             = @prototype.title
           .proto-user
-            %a{ href: "/users/#{ @prototype.user_id }" } by #{ by_whom?(@prototype) }
-            %span.degree #{ @prototype.user.member_of }
+            %a{ href: creater_path } by #{ by_whom?(@prototype) }
+            %span.degree #{ affiliation }
     .col-md-6.text-right
       %button.btn.btn-default
         = image_tag("icon_heart.svg")
