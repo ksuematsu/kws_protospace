@@ -30,3 +30,4 @@ class PrototypesController < ApplicationController
                               .merge(tag_list: tag_list)
   end
 end
+
