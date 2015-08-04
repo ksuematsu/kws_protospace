@@ -17,6 +17,16 @@ class PrototypesController < ApplicationController
     end
   end
 
+  def like
+    @prototype = Prototype.find(params[:id])
+    @prototype.liked_by current_user
+  end
+
+  def dislike
+    @prototype = Prototype.find(params[:id])
+    @prototype.disliked_by current_user
+  end
+
   private
   def prototype_params
     tag_list = params[:prototype][:tag_list].join(",")
@@ -30,3 +40,4 @@ class PrototypesController < ApplicationController
                               .merge(tag_list: tag_list)
   end
 end
+
