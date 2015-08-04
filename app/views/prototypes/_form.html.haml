@@ -3,7 +3,7 @@
     Comments
     %span.num (#{ @comments.length })
     .comments
-      = render 'comments/comment', partial: 'comment', collection: @comments
+      = render partial: 'comment', collection: @comments
   .col-md-8
     .form-inline
       = form_for([@prototype, @comment], remote: true) do |f|
