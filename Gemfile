@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'acts-as-taggable-on'
+gem 'acts_as_votable'
 gem 'carrierwave'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'devise'
