@@ -10,6 +10,10 @@ Rails.application.routes.draw do
 
   resources :prototypes, only: [:show] do
     resources :comments, only: [:create], module: 'prototypes'
+    member do
+      put 'like'    => 'prototypes#like'
+      put 'dislike' => 'prototypes#dislike'
+    end
   end
 
 end

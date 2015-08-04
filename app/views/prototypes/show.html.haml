@@ -43,3 +43,6 @@
         = render partial: 'tag', collection: @tags
   = render 'form'
 
+  = link_to('Like', like_prototype_path(@prototype), method: :put)
+  = link_to('Dislike', dislike_prototype_path(@prototype), method: :put)
+
