@@ -20,13 +20,11 @@ class PrototypesController < ApplicationController
   def like
     @prototype = Prototype.find(params[:id])
     @prototype.liked_by current_user
-    redirect_to @prototype
   end
 
   def dislike
     @prototype = Prototype.find(params[:id])
     @prototype.disliked_by current_user
-    redirect_to @prototype
   end
 
   private
