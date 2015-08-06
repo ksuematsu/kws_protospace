@@ -1,14 +1,21 @@
 .col-md-6.text-right
-  - unless current_user.liked? @prototype
-    %button.btn.btn-default
-      = image_tag("icon_heart.svg")
-      = link_to("LIKE!", like_prototype_path(@prototype), method: :put, remote: true)
-      %span.num
-        = @prototype.get_likes.size
+  - if signed_in?
+    - unless current_user.liked? @prototype
+      %button.btn.btn-default
+        = image_tag("icon_heart.svg")
+        = link_to("LIKE!", like_prototype_path(@prototype), method: :put, remote: true)
+        %span.num
+          = like_size
+    - else
+      %button.btn.btn-default
+        = image_tag("fuckfacebook.png")
+        = link_to("LIKE!", dislike_prototype_path(@prototype), method: :put, remote: true)
+        %span.num
+          = like_size
   - else
     %button.btn.btn-default
-      = image_tag("fuckfacebook.png")
-      = link_to("LIKE", dislike_prototype_path(@prototype), method: :put, remote: true)
+      = image_tag("icon_heart.svg")
+      LIKE!
       %span.num
-        = @prototype.get_likes.size
+        = like_size
 
