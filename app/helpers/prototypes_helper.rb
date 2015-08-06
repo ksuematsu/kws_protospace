@@ -25,13 +25,16 @@ module PrototypesHelper
     "#{ @prototype.user.avatar }"
   end
 
-  # 部分テンプレートのヘルパーがまだ理解不足
-  # def commenter_avatar
-  #   "#{ comment.user.avatar }"
-  # end
+  def like_size
+    @prototype.get_likes.size
+  end
 
-  # def commenter
-  #   comment.user.user_name
-  # end
+  def commenter_avatar(comment)
+    "#{ comment.user.avatar }"
+  end
+
+  def commenter(comment)
+    comment.user.user_name
+  end
 end
 
