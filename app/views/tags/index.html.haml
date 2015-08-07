@@ -1,0 +1,4 @@
+.tag_list
+  - @tags.each do |tag|
+    %lis
+      %a{ href: "/tags/#{ tag.id }", class: "btn btn-default btn-lg" } #{ tag.name }
