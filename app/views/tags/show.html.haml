@@ -1,18 +1,18 @@
-.col-sm-4.col-md-3.proto-content
-  .thumbnail
-    %a{ href: "/prototypes/#{ prototype.id }" }
-      = image_tag "#{ main_image(prototype) }"
-      .caption
-        %h3
-          = prototype.title
-        .proto-meta
-          .proto-user
-            %a{ href: "/users/#{ prototype.user.id }" }
-              by #{ by_whom?(prototype) }
-          .proto-posted
-            = date_of_created(prototype)
-        %ul.proto-tag-list.list-inline
-          - prototype.tag_list.each do |tag|
-            %li
-              %a{ href: "#", class: "btn btn-default" } #{ tag }
+.filter-nav
+  .container
+    = if flash[:notice]
+      .alert.alert-success
+        = flash[:notice]
+    .row
+      %ul.nav.nav-pills.col-lg-11
+        %li.active{ role: "presentation" }
+          %a{ class: 'show_popular' } Tagged With "#{@tag}"
+
+.container.proto-list
+  .row#prototypes
+    = render partial: 'prototype', collection: @prototypes
+.text-center
+  %ul.pagination
+    %li.disabled#prototypes
+      = paginate(@prototypes)
 
