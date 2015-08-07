@@ -4,6 +4,6 @@ module ApplicationHelper
   end
 
   def tag_id(tag)
-    Tag.where(name: "#{tag}")[0].id
+    Tag.where(name: "#{ tag }")[0].id
   end
 end
