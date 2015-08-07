@@ -12,14 +12,14 @@
         %li.active{ role: "presentation" }
           %a{ class: 'show_popular' } PROTOTYPES
         %li{ role: "presentation" }
-          %a{ class: 'show_newest' } 4 HOTTEST PROTO
+          %a{ class: 'show_newest' } 4 HOT PROTOTYPES
       %a{ class: "btn btn-default col-lg-1", href: "/tags" } View Tags
 
 .container.proto-list
   .row#prototypes
     = render partial: 'prototype', collection: @prototypes
   .row#newest-prototypes{ style: "display: none" }
-    = render partial: 'prototype', collection: @newest_prototypes
+    = render partial: 'prototype', collection: @four_hot_prototypes
 .text-center
   %ul.pagination
     %li.disabled#prototypes
